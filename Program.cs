@@ -11,24 +11,42 @@
             Random random = new Random();
             int move = random.Next(1, 7);
             int wave = random.Next(1, 4);
-            int incpos = pos + move;
-            int decpos = pos - move;
-            switch (wave)
+                        
+            while (pos >= 0 && pos <= 100)
+            
             {
-                case 1:
-                    Console.WriteLine("Player 1 got a Ladder and a value {0} on Dice", move);
+                switch (wave)
+                {
+                    case 1:
+                        Console.WriteLine("Player 1 got a Ladder and a value {0} on Dice", move);
+                        pos = pos + move;
+                        
+                        if (pos == 100)
+                        {
+                            Console.WriteLine("Player 1 Wins");
+                        }
+                        else if (pos > 100)
+                        {
+                            pos = pos - move;
+                            Console.WriteLine("Player 1 is now at position {0}", pos);
+
+                        }
+
+                        break;
                     
-                    Console.WriteLine("Player 1 is now at position {0}", incpos);
-                    break;
-                case 2:
-                    Console.WriteLine("Player 1 got a Snake and a value {0} on Dice", move);
+                    case 2:
+                        Console.WriteLine("Player 1 got a Snake and a value {0} on Dice", move);
+                        pos = pos - move;
+                        
+                        if (pos < 0)
+                        {
+                            pos = pos + move;
+                            Console.WriteLine("Player 1 is now at position {0}", pos);
+                        }
 
-                    Console.WriteLine("Player 1 is now at position {0}", decpos);
-                    break;
-                case 3:
-                    Console.WriteLine("Player 1's Move is Unclear and Remains at Position {0}", pos);
-                    break;
+                        break;
 
+                } 
             }
             
         }
