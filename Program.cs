@@ -10,14 +10,14 @@
             Console.WriteLine("Initial position of Player 1 is {0}",pos);
             Random random = new Random();
                 
-            int rollCount = 0;
+            
             
             while (pos >= 0 && pos < 100)
             
             {
                 int move = random.Next(1, 7);
                 int wave = random.Next(1, 3);
-                rollCount++;
+                
                 switch (wave)
                 {
                     case 1:
@@ -60,7 +60,7 @@
                 } 
 
             }
-            Console.WriteLine("It took {0} number of Dice Turns in order to Win the Game", rollCount);
+            
             Console.ReadLine();
             
         }
