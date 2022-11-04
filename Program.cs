@@ -9,13 +9,14 @@
             int pos = 0;
             Console.WriteLine("Initial position of Player 1 is {0}",pos);
             Random random = new Random();
-            int move = random.Next(1, 7);
-            int wave = random.Next(1, 4);
+                
             int rollCount = 0;
             
-            while (pos >= 0 && pos <= 100)
+            while (pos >= 0 && pos < 100)
             
             {
+                int move = random.Next(1, 7);
+                int wave = random.Next(1, 3);
                 rollCount++;
                 switch (wave)
                 {
@@ -33,6 +34,10 @@
                             Console.WriteLine("Player 1 is now at position {0}", pos);
 
                         }
+                        else 
+                        {
+                            Console.WriteLine("Player 1 is now at position {0}", pos);
+                        }
 
                         break;
                     
@@ -43,6 +48,10 @@
                         if (pos < 0)
                         {
                             pos = pos + move;
+                            Console.WriteLine("Player 1 is now at position {0}", pos);
+                        }
+                        else
+                        {
                             Console.WriteLine("Player 1 is now at position {0}", pos);
                         }
 
