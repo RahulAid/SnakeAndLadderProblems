@@ -11,10 +11,12 @@
             Random random = new Random();
             int move = random.Next(1, 7);
             int wave = random.Next(1, 4);
-                        
+            int rollCount = 0;
+            
             while (pos >= 0 && pos <= 100)
             
             {
+                rollCount++;
                 switch (wave)
                 {
                     case 1:
@@ -47,7 +49,10 @@
                         break;
 
                 } 
+
             }
+            Console.WriteLine("It took {0} number of Dice Turns in order to Win the Game", rollCount);
+            Console.ReadLine();
             
         }
     }
